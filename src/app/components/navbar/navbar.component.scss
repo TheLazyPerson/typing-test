@@ -1,0 +1,15 @@
+.bottom-navbar{
+  height: 20vh;
+  display: flex;
+  flex-direction: row;
+
+  .app-info{
+    flex-grow: 1;
+    text-align: center;
+  }
+  .start-test-form {
+    flex-grow: 1;
+    text-align: center;
+
+  }
+}

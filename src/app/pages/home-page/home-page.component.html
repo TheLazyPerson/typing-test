@@ -1,9 +1,8 @@
-<div class="app-container">
-  <app-navbar></app-navbar>
-  <app-testing-area></app-testing-area>
-  <div>
-    <div>INFOMRATION ON APPLICATION</div>
-    <div>STARTING THE TEST</div>
 
+<div class="app-container">
+  <div class="testing-area">
+    <!-- TODO: implement status -->
+    <app-testing-area *ngIf="status === 'ongoing'"></app-testing-area>
   </div>
+  <app-navbar></app-navbar>
 </div>
