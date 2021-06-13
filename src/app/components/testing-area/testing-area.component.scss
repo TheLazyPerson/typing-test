@@ -5,6 +5,15 @@
 
   .typing-test-text{
     min-height:50%;
+    text-align: justify;
+
+    overflow: scroll;
+
+    .text{
+      font-size: 30px;
+      line-height: 35px;
+      font-weight: 200;
+    }
   }
   .typing-test-input{
     min-height:50%;
@@ -13,7 +22,14 @@
 
     .test-textarea{
       height:100%;
-      resize: none;
+
+      textarea{
+        display:block;
+        height:100%;
+         font-size: 30px;
+         line-height: 35px;
+         font-weight: 200;
+      }
 
     }
   }
