@@ -1,0 +1,37 @@
+.testing-area-container{
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+
+  .typing-test-text{
+    min-height:50%;
+    text-align: justify;
+
+    overflow: scroll;
+
+    .text{
+      font-size: 30px;
+      line-height: 35px;
+      font-weight: 200;
+    }
+  }
+  .typing-test-input{
+    min-height:50%;
+    display: flex;
+    flex-direction: column;
+
+    .test-textarea{
+      height:100%;
+
+      textarea{
+        display:block;
+        height:100%;
+         font-size: 30px;
+         line-height: 35px;
+         font-weight: 200;
+      }
+
+    }
+  }
+}
+
