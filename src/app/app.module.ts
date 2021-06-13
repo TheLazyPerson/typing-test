@@ -14,13 +14,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { StartTestFormComponent } from './components/start-test-form/start-test-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     NavbarComponent,
-    TestingAreaComponent
+    TestingAreaComponent,
+    StartTestFormComponent
   ],
   imports: [
     BrowserModule,
