@@ -4,12 +4,15 @@
   flex-direction: row;
 
   .app-info{
-    flex-grow: 1;
-    text-align: center;
+    width: 30%;
+    text-align: left;
+
+    padding: 20px;
+
+
   }
   .start-test-form {
     flex-grow: 1;
-    text-align: center;
-
+    padding: 20px;
   }
 }
