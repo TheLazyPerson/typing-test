@@ -7,13 +7,14 @@ Typing test allows users to test there typing speed and accuracy. The applicatio
 - Test lasts for certain amount of time.
 - Calculating the score in a way that every word that is correct gets 10 points and misspelling reduces 5 points.
 
-## Milestones
+## Tasks
 
-1. Create a functional typing experience with ability to stop the clock and calculate the score.
-2. Handle edge cases.
-3. Add ability to have difficulty levels for the tests.
-4. Add ability to have highlighted words and text field below for easy and medium tests.
-5. Updating any additional asthetics.
+1. Create a simple UI which works on all supported browsers
+2. Create a functional typing experience with ability to stop the clock and calculate the score.
+3. Handle edge cases.
+4. Add ability to have difficulty levels for the tests.
+5. Add ability to have highlighted words and text field below for easy and medium tests.
+6. Updating any additional asthetics.
 
 # Development
 
