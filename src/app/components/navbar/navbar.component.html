@@ -8,6 +8,6 @@
     <app-start-test-form></app-start-test-form>
   </section>
   <section *ngIf="test.status === 'ongoing'" class="ongoing-test">
-    <app-countdown></app-countdown>
+    <app-countdown (complete)="testOver($event)"></app-countdown>
   </section>
 </section>

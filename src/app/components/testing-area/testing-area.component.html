@@ -13,7 +13,7 @@
       <mat-card-title>Type below</mat-card-title>
     </mat-card-header>
     <mat-form-field class="test-textarea" appearance="fill">
-      <textarea matInput></textarea>
+      <textarea matInput [(ngModel)]="typed" (ngModelChange)="updateTyped($event)"></textarea>
     </mat-form-field>
   </mat-card>
 </div>

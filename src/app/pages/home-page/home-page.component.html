@@ -2,5 +2,5 @@
 <div class="app-container">
   <!-- TODO: implement status -->
   <app-testing-area class="testing-area" *ngIf="status === 'ongoing'"></app-testing-area>
-  <app-navbar></app-navbar>
+  <app-navbar (countdownComplete)="calculateScore($event)"></app-navbar>
 </div>

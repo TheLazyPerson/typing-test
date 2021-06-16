@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
   providedIn: 'root'
 })
 export class TestService {
+
   private currentTestSubject: BehaviorSubject<Test>;
   public currentTest: Observable<Test>;
   private test: Test;
@@ -70,6 +71,15 @@ export class TestService {
 
   setScore(score: number, typos: number) {
 
+  }
+
+  setStatus(status: 'none' | 'ongoing' | 'complete') {
+    this.test.status = status;
+    this.currentTestSubject.next(this.test);
+  }
+
+  setTest(test: Test) {
+    this.currentTestSubject.next(test);
   }
 
 

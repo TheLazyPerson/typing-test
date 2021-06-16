@@ -9,13 +9,17 @@ import { TestService } from 'src/app/shared/services/test.service';
 })
 export class TestingAreaComponent implements OnInit {
 
+  typed: string;
   test: Test;
-  constructor(testService: TestService) {
-
+  constructor(private testService: TestService) {
     testService.currentTest.subscribe(test => this.test = test);
   }
 
   ngOnInit(): void {
   }
 
+  updateTyped(event: any) {
+    this.test.typed = this.typed;
+    this.testService.setTest(this.test);
+  }
 }
