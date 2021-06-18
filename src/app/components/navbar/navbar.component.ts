@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Test } from 'src/app/shared/models/test.model';
+import { TestService } from 'src/app/shared/services/test.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  test: Test;
+  @Output() countdownComplete: EventEmitter<string> = new EventEmitter<string>();
+
+  constructor(testService: TestService) {
+    testService.currentTest.subscribe(test => this.test = test);
+  }
 
   ngOnInit(): void {
+  }
+
+  testOver(event) {
+    this.countdownComplete.emit(event);
   }
 
 }

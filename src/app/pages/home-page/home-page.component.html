@@ -1,6 +1,24 @@
 
 <div class="app-container">
   <!-- TODO: implement status -->
-  <app-testing-area class="testing-area" *ngIf="status === 'ongoing'"></app-testing-area>
-  <app-navbar></app-navbar>
+  <div class="main-content">
+    <app-testing-area *ngIf="test.status === 'ongoing'"></app-testing-area>
+    <div class="result-container" *ngIf="test.status === 'complete'">
+      <div class="result">
+        <div class="score">
+          <h1>{{test.score}}</h1>
+        </div>
+        <div class="paragraph" >
+          <div class="shown-text">
+            <p>{{test.text}}</p>
+          </div>
+          <div class="typed-text">
+            <p>{{test.typed}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <app-navbar (countdownComplete)="calculateScore($event)"></app-navbar>
 </div>

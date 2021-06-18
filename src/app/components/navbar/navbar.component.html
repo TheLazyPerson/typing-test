@@ -3,50 +3,11 @@
     <h1 class="mat-title">TYPING TEST</h1>
     <p class="mat-description">Test your typing speed and accuracy.</p>
   </section>
-  <section class="start-test-form">
+  <section *ngIf="test.status === 'none' || test.status === 'complete'" class="start-test-form">
     <h3 class="title">START TEST</h3>
-
-    <form class="start-test">
-      <mat-form-field appearance="outline">
-        <mat-label>Time</mat-label>
-        <mat-select>
-          <mat-option value="one-minute">
-            1 Minute
-          </mat-option>
-          <mat-option value="two-minute">
-            2 Minute
-          </mat-option>
-          <mat-option value="three-minute">
-            3 Minute
-          </mat-option>
-          <mat-option value="four-minute">
-            4 Minute
-          </mat-option>
-          <mat-option value="five-minute">
-            5 Minute
-          </mat-option>
-
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field class="ml-2" appearance="outline">
-        <mat-label>Difficulty</mat-label>
-        <mat-select>
-          <mat-option value="easy">
-            Easy
-          </mat-option>
-          <mat-option value="medium">
-            Medium
-          </mat-option>
-          <mat-option value="hard">
-            Hard
-          </mat-option>
-
-        </mat-select>
-      </mat-form-field>
-      <div class="ml-2">
-        <button type="submit"  mat-raised-button color="primary">Start Test</button>
-      </div>
-
-    </form>
+    <app-start-test-form></app-start-test-form>
+  </section>
+  <section *ngIf="test.status === 'ongoing'" class="ongoing-test">
+    <app-countdown (complete)="testOver($event)"></app-countdown>
   </section>
 </section>

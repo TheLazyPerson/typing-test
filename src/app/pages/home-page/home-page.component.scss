@@ -3,9 +3,35 @@
   display: flex;
   flex-direction: column;
 
-  .testing-area{
+  .main-content{
     flex-grow: 1;
     background-color: #e2e2e2;
     text-align: center;
+    .result-container {
+      height: 100%;
+      background-color: #e2e2e2;
+      text-align: center;
+
+      .result {
+        height: 100%;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        padding: 20px;
+
+        .score {
+          width: 50%;
+          height: 100%;
+        }
+        .paragraph{
+          text-align: left;
+            width: 50%;
+            height: 100%;
+        }
+      }
+    }
   }
+
+
 }

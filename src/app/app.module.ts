@@ -14,13 +14,18 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { StartTestFormComponent } from './components/start-test-form/start-test-form.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CountdownComponent } from './components/countdown/countdown.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     NavbarComponent,
-    TestingAreaComponent
+    TestingAreaComponent,
+    StartTestFormComponent,
+    CountdownComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,9 @@ import { MatInputModule } from '@angular/material/input';
     MatSelectModule,
     MatButtonModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
