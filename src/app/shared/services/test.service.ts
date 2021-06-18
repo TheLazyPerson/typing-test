@@ -70,6 +70,9 @@ export class TestService {
   }
 
   setScore(score: number, typos: number) {
+    this.test.score = score;
+    this.test.typos = typos;
+     this.currentTestSubject.next(this.test);
 
   }
 
