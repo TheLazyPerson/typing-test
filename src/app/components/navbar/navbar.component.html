@@ -1,10 +1,9 @@
 <section class="bottom-navbar">
   <section class="app-info mat-typography">
-    <h1 class="mat-title">TYPING TEST</h1>
-    <p class="mat-description">Test your typing speed and accuracy.</p>
+    <p class="description">Check Typing Speed</p>
+    <h1 class="title">TYPED</h1>
   </section>
   <section *ngIf="test.status === 'none' || test.status === 'complete'" class="start-test-form">
-    <h3 class="title">START TEST</h3>
     <app-start-test-form></app-start-test-form>
   </section>
   <section *ngIf="test.status === 'ongoing'" class="ongoing-test">
