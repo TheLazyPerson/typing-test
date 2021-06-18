@@ -10,7 +10,6 @@ import { TestService } from 'src/app/shared/services/test.service';
 })
 export class HomePageComponent implements OnInit {
 
-  status: string = "ongoing";
   test: Test;
   constructor(private testService: TestService) { }
 
