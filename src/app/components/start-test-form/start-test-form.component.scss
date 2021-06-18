@@ -1,0 +1,42 @@
+.start-test{
+  ::ng-deep .mat-select-panel {
+    background-color: red;
+  }
+  .create-test-button {
+    font-family: "Avenir Next";
+    text-transform: uppercase;
+    font-size: 18px;
+    background-color: transparent !important;
+
+    .button-image {
+      margin-bottom: 5px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+  }
+
+  ::ng-deep .mat-form-field-outline{
+    background-color: #fff;
+    color: #0e0e0e;
+  }
+
+  ::ng-deep .mat-select-placeholder {
+    font-family: "Avenir Next", Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #e2e2e2;
+  }
+
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    border: none;
+  }
+
+}
+
