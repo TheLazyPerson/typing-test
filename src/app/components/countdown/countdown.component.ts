@@ -31,7 +31,6 @@ export class CountdownComponent implements OnInit {
       },
       () => {
         this.complete.emit("complete");
-        console.log("TEST COMPLETE");
     });
 
   }
