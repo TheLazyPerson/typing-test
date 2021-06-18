@@ -22,13 +22,18 @@ export class HomePageComponent implements OnInit {
       let typedArray = this.test.typed.split(' ');
       let textArray = this.test.text.split(' ');
       let score = 0;
+      let typos = 0;
       typedArray.forEach((element, index) => {
         if (element === textArray[index] && textArray[index] !== undefined) {
           score += 10;
         } else {
           score -= 5;
+          typos++;
         }
       });
+      this.testService.setScore(score, typos);
+      this.testService.setStatus("complete");
+
       console.log("Total Score", score);
 
 
