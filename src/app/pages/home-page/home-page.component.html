@@ -2,6 +2,10 @@
 <div class="app-container">
   <!-- TODO: implement status -->
   <div class="main-content">
+    <div class="hero-container" *ngIf="test.status === 'none'">
+      <img src="../../../assets/gifs/feedback.gif" />
+
+    </div>
     <app-testing-area *ngIf="test.status === 'ongoing'"></app-testing-area>
     <div class="result-container" *ngIf="test.status === 'complete'">
       <div class="result">
