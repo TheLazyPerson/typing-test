@@ -3,7 +3,7 @@
     <h1 class="mat-title">TYPING TEST</h1>
     <p class="mat-description">Test your typing speed and accuracy.</p>
   </section>
-  <section *ngIf="test.status === 'none'" class="start-test-form">
+  <section *ngIf="test.status === 'none' || test.status === 'complete'" class="start-test-form">
     <h3 class="title">START TEST</h3>
     <app-start-test-form></app-start-test-form>
   </section>
