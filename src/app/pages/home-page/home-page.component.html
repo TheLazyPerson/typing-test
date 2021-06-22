@@ -66,19 +66,41 @@
     </div>
     <app-testing-area *ngIf="test.status === 'ongoing'"></app-testing-area>
     <div class="result-container" *ngIf="test.status === 'complete'">
-      <div class="result">
-        <div class="score">
-          <h1>{{test.score}}</h1>
-        </div>
-        <div class="paragraph" >
-          <div class="shown-text">
-            <p>{{test.text}}</p>
+      <div class="wrapper">
+        <h1 class="title">Result</h1>
+        <p class="subtitle">Let’s check how you did?</p>
+        <div class="result">
+          <div class="score">
+            <p class="comment"><span>SHARP</span> - Damn! you are really good!</p>
+            <div class="score-list">
+              <div class="list-item">
+                <h6>Score</h6>
+                <h3>{{test.score}} / 300</h3>
+              </div>
+              <div class="list-item">
+                <h6>Typos</h6>
+                <h3>{{test.typos}} </h3>
+
+              </div>
+              <div class="list-item">
+                <h6>Speed</h6>
+                <h3>12 wpm</h3>
+
+              </div>
+
+            </div>
           </div>
-          <div class="typed-text">
-            <p>{{test.typed}}</p>
+          <div class="paragraph" >
+            <div class="shown-text">
+              <p>{{test.text}}</p>
+            </div>
+            <div class="typed-text">
+              <p>{{test.typed}}</p>
+            </div>
           </div>
         </div>
       </div>
+
 
     </div>
   </div>
