@@ -2,23 +2,107 @@
 <div class="app-container">
   <!-- TODO: implement status -->
   <div class="main-content">
+    <div class="hero-container" *ngIf="test.status === 'none'">
+      <!-- <img src="../../../assets/gifs/feedback.gif" /> -->
+      <div class="welcome">
+          <h1 class="title">Welcome to Typed!</h1>
+          <p class="subtitle">Typed allows you to test there typing speed and accuracy.</p>
+          <div class="hero-features">
+            <div class="hero-use">
+              <h2 class="secondary-title">Why use this tool?</h2>
+              <div class="use-list">
+                <div class="list-item">
+                  <div>
+                    <mat-icon class="icon" aria-hidden="false" aria-label="Example home icon">hdr_auto</mat-icon>
+                  </div>
+                  <p>Verify typing speed</p>
+                </div>
+                <div class="list-item">
+                  <div>
+                    <mat-icon class="icon" aria-hidden="false" aria-label="Example home icon">keyboard</mat-icon>
+
+                  </div>
+                  <p>Get better with practice</p>
+                </div>
+                <div class="list-item">
+                  <div>
+                    <mat-icon class="icon" aria-hidden="false" aria-label="Example home icon">insights</mat-icon>
+
+                  </div>
+                  <p>Track your performance</p>
+                </div>
+
+              </div>
+            </div>
+            <div class="hero-difficulty">
+              <h2 class="secondary-title">Difficulty Levels</h2>
+              <div class="difficulty-list">
+                <div class="list-item">
+                  <div class="feature-text">
+                    <span>Case sensitive and does not allow any mistakes.</span>
+                  </div>
+                  <p>Hard</p>
+                </div>
+                <div class="list-item">
+                  <div class="feature-text">
+                    <span>Case sensitive, allows you to miss one word.</span>
+
+                  </div>
+                  <p>Medium</p>
+                </div>
+                <div class="list-item">
+                  <div class="feature-text">
+                    <span>Case insensitive, allows you to miss one word, and punctuation marks.</span>
+                  </div>
+                  <p>Easy</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+      </div>
+
+    </div>
     <app-testing-area *ngIf="test.status === 'ongoing'"></app-testing-area>
     <div class="result-container" *ngIf="test.status === 'complete'">
-      <div class="result">
-        <div class="score">
-          <h1>{{test.score}}</h1>
-        </div>
-        <div class="paragraph" >
-          <div class="shown-text">
-            <p>{{test.text}}</p>
+      <div class="wrapper">
+        <h1 class="title">Result</h1>
+        <p class="subtitle">Let’s check how you did?</p>
+        <div class="result">
+          <div class="score">
+            <p class="comment"><span>SHARP</span> - Damn! you are really good!</p>
+            <div class="score-list">
+              <div class="list-item">
+                <h6>Score</h6>
+                <h3>{{test.score}} / 300</h3>
+              </div>
+              <div class="list-item">
+                <h6>Typos</h6>
+                <h3>{{test.typos}} </h3>
+
+              </div>
+              <div class="list-item">
+                <h6>Speed</h6>
+                <h3>12 wpm</h3>
+
+              </div>
+
+            </div>
           </div>
-          <div class="typed-text">
-            <p>{{test.typed}}</p>
+          <div class="paragraph" >
+            <div class="shown-text">
+              <p>{{test.text}}</p>
+            </div>
+            <div class="typed-text">
+              <p>{{test.typed}}</p>
+            </div>
           </div>
         </div>
       </div>
 
+
     </div>
   </div>
-  <app-navbar (countdownComplete)="calculateScore($event)"></app-navbar>
+  <app-navbar class="navbar" (countdownComplete)="calculateScore($event)"></app-navbar>
 </div>

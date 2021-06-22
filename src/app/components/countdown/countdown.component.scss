@@ -1,0 +1,17 @@
+.countdown{
+  display : flex;
+  align-items : center;
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  h2{
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: auto;
+    span{
+      font-weight: 200;
+      font-size: 30px;
+    }
+  }
+}
