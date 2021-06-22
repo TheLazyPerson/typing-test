@@ -45,6 +45,10 @@ export class StartTestFormComponent implements OnInit {
     this.testService.currentTest.subscribe(test => this.test = test);
   }
 
+  ngOnInit() {
+
+  }
+
   // convenience getter for easy access to form fields
   get f() {
     return this.startTestForm.controls;
