@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material/input';
 import { StartTestFormComponent } from './components/start-test-form/start-test-form.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CountdownComponent } from './components/countdown/countdown.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CountdownComponent } from './components/countdown/countdown.component';
     MatCardModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
