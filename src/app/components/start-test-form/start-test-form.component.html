@@ -1,20 +1,25 @@
 <form class="start-test" [formGroup]="startTestForm">
-  <mat-form-field class="form-field" appearance="outline" [floatLabel]="'never'">
-    <mat-label>Select Time</mat-label>
-    <mat-select formControlName="time">
-      <mat-option *ngFor="let option of timeOptions" [value]="option.value">
-        {{option.text}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field  class="ml-2 form-field" appearance="outline" [floatLabel]="'never'">
-    <mat-label>Select Difficulty</mat-label>
-    <mat-select formControlName="difficulty">
-      <mat-option *ngFor="let option of difficultyOptions" [value]="option.value">
-        {{option.text}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+  <div class="form-field">
+    <h4>Select Time</h4>
+    <mat-form-field appearance="outline" [floatLabel]="'never'">
+      <mat-select  [(value)]="defaultTime" formControlName="time">
+        <mat-option *ngFor="let option of timeOptions" [value]="option.value">
+          {{option.text}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="ml-2 form-field">
+    <h4>Select Difficulty</h4>
+    <mat-form-field  appearance="outline" [floatLabel]="'never'">
+      <mat-select  [(value)]="defaultDifficulty" formControlName="difficulty">
+        <mat-option *ngFor="let option of difficultyOptions" [value]="option.value">
+          {{option.text}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
   <div class="ml-auto">
     <button class="create-test-button" type="submit" (click)="startTest()" mat-raised-button color="primary">
       <img class="button-image" src="../../../assets/icons/button.svg" />

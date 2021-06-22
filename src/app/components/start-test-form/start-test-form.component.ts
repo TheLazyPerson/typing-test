@@ -20,6 +20,8 @@ export class StartTestFormComponent implements OnInit {
   difficultyOptions: Option[];
   loading: boolean = false;
   test: Test;
+  defaultTime: string;
+  defaultDifficulty: string;
   constructor(private formBuilder: FormBuilder, private testService: TestService) {
     this.timeOptions = [
       { value: '1', text: "1 Minute" },
@@ -35,14 +37,12 @@ export class StartTestFormComponent implements OnInit {
       { value: 'hard', text: "Hard" },
     ];
 
+
     this.startTestForm = this.formBuilder.group({
-      time: [ "", [Validators.required] ],
-      difficulty: [ "" , [Validators.required]],
+      time: [ "1", [Validators.required] ],
+      difficulty: [ "easy" , [Validators.required]],
     });
     this.testService.currentTest.subscribe(test => this.test = test);
-  }
-
-  ngOnInit(): void {
   }
 
   // convenience getter for easy access to form fields
