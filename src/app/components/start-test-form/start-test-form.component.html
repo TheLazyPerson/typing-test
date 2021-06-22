@@ -2,7 +2,7 @@
   <div class="form-field">
     <h4>Select Time</h4>
     <mat-form-field appearance="outline" [floatLabel]="'never'">
-      <mat-select  [(value)]="defaultTime" formControlName="time">
+      <mat-select  formControlName="time">
         <mat-option *ngFor="let option of timeOptions" [value]="option.value">
           {{option.text}}
         </mat-option>
@@ -12,7 +12,7 @@
   <div class="ml-2 form-field">
     <h4>Select Difficulty</h4>
     <mat-form-field  appearance="outline" [floatLabel]="'never'">
-      <mat-select  [(value)]="defaultDifficulty" formControlName="difficulty">
+      <mat-select  formControlName="difficulty">
         <mat-option *ngFor="let option of difficultyOptions" [value]="option.value">
           {{option.text}}
         </mat-option>
