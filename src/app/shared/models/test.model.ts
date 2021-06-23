@@ -10,4 +10,5 @@ export class Test {
   status: 'none' | 'ongoing' | 'complete';
   speed: number;
   totalScore: number;
+  result: Array<object>;
 }

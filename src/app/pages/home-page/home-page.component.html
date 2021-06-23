@@ -95,7 +95,9 @@
               <p>{{test.text}}</p>
             </div>
             <div class="typed-text">
-              <p>{{test.typed}}</p>
+              <p>
+                <span *ngFor="let word of test.result; let index = index" [class]="word.state">{{word.value}} </span>
+              </p>
             </div>
           </div>
         </div>

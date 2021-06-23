@@ -31,7 +31,8 @@ export class TestService {
       typed: '',
       status: 'none',
       totalScore: 0,
-      speed: 0
+      speed: 0,
+      result: []
     };
   }
 
@@ -47,8 +48,8 @@ export class TestService {
       typed: '',
       status: 'ongoing',
       totalScore: 0,
-      speed: 0
-
+      speed: 0,
+      result: []
     });
   }
 
@@ -87,6 +88,12 @@ export class TestService {
   setStatus(status: 'none' | 'ongoing' | 'complete') {
     this.test.status = status;
     this.currentTestSubject.next(this.test);
+  }
+
+  setResult(result: Array<object>) {
+    this.test.result = result;
+    this.currentTestSubject.next(this.test);
+
   }
 
   setTest(test: Test) {
