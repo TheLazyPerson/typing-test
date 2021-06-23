@@ -8,4 +8,6 @@ export class Test {
   time: number;
   typed: string;
   status: 'none' | 'ongoing' | 'complete';
+  speed: number;
+  totalScore: number;
 }
