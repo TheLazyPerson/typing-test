@@ -34,18 +34,21 @@ export class HomePageComponent implements OnInit {
         let matchType:string = "";
 
         //cases
-        // 2. If the word is a perfect match with punctuation and case
-        // 3. If the word is match without case,
-        // 4. If the word is match without punctuation
-        // 5. if the word is a complete miss match
-        // 6. If the word is does not match and matches the next word
+        // 1. If the word is a perfect match with punctuation and case
+        // 2. If the word is match without case,
+        // 3. If the word is match without punctuation
+        // 4. if the word is a complete miss match
+        // 5. If the word is does not match and matches the next word
 
         if (index >= typedArray.length) {
           return false;
         }
+
+
         if (typedArray[index] === undefined) {
           throw new Error("Invalid");
         }
+
         // If the word is a perfect match with punctuation and case
         if (
           element === typedArray[index]
@@ -79,7 +82,8 @@ export class HomePageComponent implements OnInit {
               typedArray.splice(index, 0, "__");
           }
         }
-         // Hard
+
+        // Hard
         //Case sensitive and does not allow any mistakes.
         if (
           this.test.difficulty === "hard"
@@ -88,10 +92,12 @@ export class HomePageComponent implements OnInit {
         ) {
           isTypo = true;
           state = "typo";
-        } else if(matchType === "next-word-matched"){
+        } else if(this.test.difficulty === "hard"
+          && matchType === "next-word-matched"){
           isTypo = true;
           state = "missing";
         }
+
         // Medium
         // Case sensitive, allows you to miss one word.
         if (
@@ -101,24 +107,32 @@ export class HomePageComponent implements OnInit {
         ) {
           isTypo = true;
           state = "typo";
-        } else if (matchType === "next-word-matched") {
+        } else if (this.test.difficulty === "medium"
+          && matchType === "next-word-matched") {
           isTypo = false;
-          state = "";
+          state = "missing";
         }
 
         // Easy
         // Case insensitive, allows you to miss one word, and punctuation marks.
         if (
           this.test.difficulty === "easy"
-          && matchType !== "perfect-match-with-punctuation"
-          && matchType !== "match-without-case"
-          && matchType !== "perfect-match-without-punctuation"
-          && matchType !== "next-word-matched"
+          && matchType === "total-mismatch"
         ) {
           isTypo = true;
           state = "typo";
-        } else if (matchType === "next-word-matched") {
-          isTypo = true;
+        } else if (
+          this.test.difficulty === "easy"
+          && matchType !== "next-word-matched"
+          && matchType !== "perfect-match-with-punctuation"
+        ) {
+          isTypo = false;
+          state = "typo";
+
+        } else if (this.test.difficulty === "easy"
+          && matchType === "next-word-matched"
+        ) {
+          isTypo = false;
           state = "missing";
         }
 
@@ -126,7 +140,6 @@ export class HomePageComponent implements OnInit {
             value: typedArray[index], state: state, matchType: matchType
         });
         if (!isTypo) {
-
           score += 10;
         } else {
           score -= 5;
