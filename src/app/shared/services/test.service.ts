@@ -29,7 +29,10 @@ export class TestService {
       typos: 0,
       time: 0,
       typed: '',
-      status: 'none'
+      status: 'none',
+      totalScore: 0,
+      speed: 0,
+      result: []
     };
   }
 
@@ -43,7 +46,10 @@ export class TestService {
       typos: 0,
       time: (timeInMinutes * 60),
       typed: '',
-      status: 'ongoing'
+      status: 'ongoing',
+      totalScore: 0,
+      speed: 0,
+      result: []
     });
   }
 
@@ -69,16 +75,25 @@ export class TestService {
     this.currentTestSubject.next(this.test);
   }
 
-  setScore(score: number, typos: number) {
+  setScore(score: number, typos: number, totalScore: number, speed: number) {
     this.test.score = score;
     this.test.typos = typos;
-     this.currentTestSubject.next(this.test);
+    this.test.totalScore = totalScore;
+    this.test.speed = speed;
+
+    this.currentTestSubject.next(this.test);
 
   }
 
   setStatus(status: 'none' | 'ongoing' | 'complete') {
     this.test.status = status;
     this.currentTestSubject.next(this.test);
+  }
+
+  setResult(result: Array<object>) {
+    this.test.result = result;
+    this.currentTestSubject.next(this.test);
+
   }
 
   setTest(test: Test) {

@@ -6,7 +6,7 @@
       <!-- <img src="../../../assets/gifs/feedback.gif" /> -->
       <div class="welcome">
           <h1 class="title">Welcome to Typed!</h1>
-          <p class="subtitle">Typed allows you to test there typing speed and accuracy.</p>
+          <p class="subtitle">Typed allows you to test your typing speed and accuracy.</p>
           <div class="hero-features">
             <div class="hero-use">
               <h2 class="secondary-title">Why use this tool?</h2>
@@ -75,7 +75,7 @@
             <div class="score-list">
               <div class="list-item">
                 <h6>Score</h6>
-                <h3>{{test.score}} / 300</h3>
+                <h3>{{test.score}} / {{test.totalScore}}</h3>
               </div>
               <div class="list-item">
                 <h6>Typos</h6>
@@ -84,7 +84,7 @@
               </div>
               <div class="list-item">
                 <h6>Speed</h6>
-                <h3>12 wpm</h3>
+                <h3>{{test.speed}} wpm</h3>
 
               </div>
 
@@ -95,7 +95,9 @@
               <p>{{test.text}}</p>
             </div>
             <div class="typed-text">
-              <p>{{test.typed}}</p>
+              <p>
+                <span *ngFor="let word of test.result; let index = index" [class]="word.state">{{word.value}} </span>
+              </p>
             </div>
           </div>
         </div>

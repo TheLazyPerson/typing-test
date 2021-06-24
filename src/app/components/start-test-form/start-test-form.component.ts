@@ -20,8 +20,6 @@ export class StartTestFormComponent implements OnInit {
   difficultyOptions: Option[];
   loading: boolean = false;
   test: Test;
-  defaultTime: string;
-  defaultDifficulty: string;
   constructor(private formBuilder: FormBuilder, private testService: TestService) {
     this.timeOptions = [
       { value: '1', text: "1 Minute" },
